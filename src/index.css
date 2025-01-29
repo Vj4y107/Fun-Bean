@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Comic Sans MS';
+    src: local('Comic Sans MS');
+  }
+
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+}
+
+@layer components {
+  .fun-button {
+    @apply px-6 py-3 rounded-full text-white font-bold transform transition-all duration-300
+           hover:scale-105 hover:shadow-lg active:scale-95 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .fun-input {
+    @apply w-full px-6 py-4 rounded-2xl border-3 bg-white/90 backdrop-blur-sm
+           border-orange-300 focus:border-orange-500 
+           focus:ring-4 focus:ring-orange-200 outline-none transition-all
+           text-lg placeholder:text-gray-400;
+  }
+
+  .fun-card {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8
+           transform transition-all duration-300
+           hover:shadow-2xl hover:scale-102 hover:-translate-y-1;
+  }
+
+  .interest-card {
+    @apply relative overflow-hidden rounded-3xl cursor-pointer
+           transform transition-all duration-300
+           hover:scale-105 hover:shadow-2xl;
+  }
+
+  .interest-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent
+           flex flex-col justify-end p-6 transition-all duration-300
+           hover:from-black/80;
+  }
+
+  .nav-link {
+    @apply flex items-center space-x-2 px-4 py-2 rounded-full
+           transition-all duration-300 hover:bg-white/20;
+  }
+}
